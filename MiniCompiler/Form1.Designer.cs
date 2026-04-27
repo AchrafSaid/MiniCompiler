@@ -35,22 +35,22 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(32, 60);
+            textBox1.Location = new Point(32, 15);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Vertical;
-            textBox1.Size = new Size(319, 254);
+            textBox1.Size = new Size(335, 299);
             textBox1.TabIndex = 0;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button1
             // 
             button1.BackColor = SystemColors.ActiveBorder;
-            button1.Location = new Point(268, 359);
+            button1.Location = new Point(256, 347);
             button1.Name = "button1";
-            button1.Size = new Size(212, 41);
+            button1.Size = new Size(280, 61);
             button1.TabIndex = 1;
-            button1.Text = "Compile";
+            button1.Text = "Scan";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -58,9 +58,9 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(482, 60);
+            listBox1.Location = new Point(458, 15);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(253, 259);
+            listBox1.Size = new Size(310, 304);
             listBox1.TabIndex = 2;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -68,6 +68,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaptionText;
             ClientSize = new Size(800, 450);
             Controls.Add(listBox1);
             Controls.Add(button1);
