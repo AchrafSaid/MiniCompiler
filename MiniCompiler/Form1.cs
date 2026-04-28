@@ -25,8 +25,8 @@ namespace MiniCompiler
             // 🔹 FORM
             this.BackColor = Color.FromArgb(24, 24, 36);
 
-            int margin = 40;
-            int spacing = 20;
+            int margin = 100;
+            int spacing = 60;
 
             int totalWidth = this.ClientSize.Width - (margin * 2) - spacing;
             int halfWidth = totalWidth / 2;
@@ -84,7 +84,7 @@ namespace MiniCompiler
             button1.Height = 35;
 
             button1.Left = this.ClientSize.Width - button1.Width - margin;
-            button1.Top = this.ClientSize.Height - button1.Height - 20;
+            button1.Top = this.ClientSize.Height - button1.Height - 20-20;
 
             // Hover
             button1.MouseEnter += (s, e) =>
@@ -93,7 +93,6 @@ namespace MiniCompiler
             button1.MouseLeave += (s, e) =>
                 button1.BackColor = Color.FromArgb(0, 122, 204);
         }
-        int intf = 5;
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -160,7 +159,6 @@ namespace MiniCompiler
                                 break;
                             }
                         }
-
                         if(goodjob==""&&abudubi!="")
                         {
                             goodjob = "Variable";
