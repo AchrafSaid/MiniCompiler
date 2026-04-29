@@ -22,7 +22,6 @@ namespace MiniCompiler
         }
         void StyleUI()
         {
-            // 🔹 FORM
             this.BackColor = Color.FromArgb(24, 24, 36);
 
             int margin = 100;
@@ -33,7 +32,6 @@ namespace MiniCompiler
 
             int height = this.ClientSize.Height - 120;
 
-            // 🔹 LABELS
             label1.Text = "Source Code";
             label2.Text = "Tokens Output";
 
@@ -43,7 +41,6 @@ namespace MiniCompiler
             label1.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             label2.Font = new Font("Segoe UI", 10, FontStyle.Bold);
 
-            // 🔹 TEXTBOX (LEFT)
             label1.Left = margin;
             label1.Top = 20;
 
@@ -59,7 +56,6 @@ namespace MiniCompiler
             textBox1.Multiline = true;
             textBox1.ScrollBars = ScrollBars.Vertical;
 
-            // 🔹 LISTBOX (RIGHT)
             label2.Left = textBox1.Right + spacing;
             label2.Top = 20;
 
@@ -73,7 +69,6 @@ namespace MiniCompiler
             listBox1.Font = new Font("Consolas", 18);
             listBox1.BorderStyle = BorderStyle.None;
 
-            // 🔹 BUTTON (BOTTOM RIGHT)
             button1.Text = "Run";
             button1.BackColor = Color.FromArgb(0, 122, 204);
             button1.ForeColor = Color.White;
@@ -111,7 +106,6 @@ namespace MiniCompiler
            // MessageBox.Show(code);
             for (int i = 0; i <code.Length; i++)
             {
-                //
                 sympol = false;
                 if (code[i] != ' ' && code[i] != '\n' && code[i] != '\r')
                 {
@@ -159,12 +153,25 @@ namespace MiniCompiler
                                 break;
                             }
                         }
-                        if(goodjob==""&&abudubi!="")
+                        bool isNumber = true;
+                        for (int k = 0; k < abudubi.Length; k++)
                         {
-                            goodjob = "Variable";
+                            if (abudubi[k] < '0' || abudubi[k] > '9')
+                            {
+                                isNumber = false;
+                                break;
+                            }
                         }
-                        
-                        if(abudubi!= "")
+
+                        if (goodjob == "" && abudubi != "")
+                        {
+                            if (isNumber)
+                                goodjob = "Number";
+                            else
+                                goodjob = "Variable";
+                        }
+
+                        if (abudubi!= "")
                         {
                              listBox1.Items.Add(abudubi + " is " + goodjob);
                         }
@@ -253,11 +260,28 @@ namespace MiniCompiler
                             break;
                         }
                     }
+                    bool isNum = true;
+                    for (int k = 0; k < abudubi.Length; k++)
+                    {
+                        if (abudubi[k] < '0' || abudubi[k] > '9')
+                        {
+                            isNum = false;
+                            break;
+                        }
+                    }
+
                     if (goodjob == "" && abudubi != "")
                     {
-                        goodjob = "Variable";
+                        if (isNum)
+                        {
+                            goodjob = "Number";
+                        }
+                        else
+                        {
+                            goodjob = "Variable";
+                        }
                     }
-                    if(goodjob !=  "")
+                    if (goodjob !=  "")
                     {
                     listBox1.Items.Add(abudubi+" is "+goodjob);
                     }
